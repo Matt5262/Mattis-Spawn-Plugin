@@ -1,0 +1,7 @@
+me\matt5262\spawnPlugin\commands\SetSpawnCommand.class
+me\matt5262\spawnPlugin\commands\SpawnPluginArgumentCommands.class
+me\matt5262\spawnPlugin\commands\SpawnCommand.class
+me\matt5262\spawnPlugin\commands\RepeatCommand.class
+me\matt5262\spawnPlugin\tabcompleter\SpawnPluginCompleter.class
+me\matt5262\spawnPlugin\listeners\SpawnListeners.class
+me\matt5262\spawnPlugin\SpawnPlugin.class

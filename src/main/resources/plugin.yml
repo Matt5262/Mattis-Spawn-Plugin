@@ -1,0 +1,47 @@
+name: SpawnPlugin
+version: '1.0'
+main: me.matt5262.spawnPlugin.SpawnPlugin
+api-version: '1.21'
+authors: [ Matt_5262 ]
+description: My first plugin ever
+commands:
+  setspawn:
+    description: Sets the spawn!
+    usage: /<command>
+    permission: spawnplugin.setspawn
+    permission-message: You do not have permission for this command!
+  spawn:
+    description: Teleport to spawn!
+    usage: /<command>
+    permission: spawnplugin.spawn
+    permission-message: You do not have permission for this command!
+  repeat:
+    description: Repeat something back to you!
+    usage: /<command>
+    permission: spawnplugin.repeat
+    permission-message: You do not have permission for this command!
+  spawnplugin:
+    description: SpawnPlugin Main Commands?? IDK MAN
+    usage: /<command>
+    permission: spawnplugin.spawnplugin
+    permission-message: You do not have permission for this command!
+permissions:
+  spawnplugin.*:
+    description: gives all access to my spawn plugin
+    children:
+      spawnplugin.spawnplugin: true
+      spawnplugin.repeat: true
+      spawnplugin.spawn: true
+      spawnplugin.setspawn: true
+  spawnplugin.spawnplugin:
+    description: Allows the spawnplugin command for help and spawn reset!
+    default: op
+  spawnplugin.repeat:
+    description: Allows the repeat command!
+    default: true
+  spawnplugin.spawn:
+    description: Allows spawn command!
+    default: true
+  spawnplugin.setspawn:
+    description: Allows setspawn!
+    default: op

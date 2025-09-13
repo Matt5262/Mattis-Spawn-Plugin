@@ -1,0 +1,4 @@
+#Set this to false if you do not like my wonderful startup message
+sigma-startup-message: true
+#Spawn settings
+spawn:
