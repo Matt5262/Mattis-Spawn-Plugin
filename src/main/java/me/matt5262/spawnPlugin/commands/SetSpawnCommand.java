@@ -20,7 +20,12 @@ public class SetSpawnCommand implements CommandExecutor {
 
         if(commandSender instanceof Player){
             Player player = (Player) commandSender;
+
+            String invalidNumbersMsg = plugin.getConfig().getString("invalid-numbers-message");
+            String spawnUpdatedMsg = plugin.getConfig().getString("spawn-updated-message");
+
             Location location = player.getLocation();
+
             if (strings.length == 0){ //Set spawn to player location
                 plugin.getConfig().set("spawn", location);
                 plugin.saveConfig();
@@ -30,7 +35,10 @@ public class SetSpawnCommand implements CommandExecutor {
                     int xInt = (int) spawnConfig.getX();
                     int yInt = (int) spawnConfig.getY();
                     int zInt = (int) spawnConfig.getZ();
-                    player.sendMessage(ChatColor.GREEN + "Spawn updated! (" + xInt + " " + yInt + " " + zInt + ")");
+                    if (spawnUpdatedMsg != null) {
+                        spawnUpdatedMsg = spawnUpdatedMsg.replace("%new-spawn-cords%", xInt + " " + yInt + " " + zInt);
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', spawnUpdatedMsg));
+                    }
                 }
             } else if (strings.length == 3) { //Custom Set spawn with custom cords
                 try {
@@ -46,12 +54,19 @@ public class SetSpawnCommand implements CommandExecutor {
                     int xInt = (int) locationFromArgs.getX();
                     int yInt = (int) locationFromArgs.getY();
                     int zInt = (int) locationFromArgs.getZ();
-                    player.sendMessage(ChatColor.GREEN + "Spawn updated! (" + xInt + " " + yInt + " " + zInt + ")");
+                    if (spawnUpdatedMsg != null) {
+                        spawnUpdatedMsg = spawnUpdatedMsg.replace("%new-spawn-cords%", xInt + " " + yInt + " " + zInt);
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', spawnUpdatedMsg));
+                    }
                 } catch (NumberFormatException e) {
-                    player.sendMessage(ChatColor.RED + "Invalid numbers! Use: /setspawn <x> <y> <z>");
+                    if (invalidNumbersMsg != null) {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', invalidNumbersMsg));
+                    }
                 }
             }else{
-                player.sendMessage(ChatColor.RED + "Invalid numbers! Use: /setspawn <x> <y> <z>");
+                if (invalidNumbersMsg != null) {
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', invalidNumbersMsg));
+                }
             }
         }else{
             plugin.getLogger().warning("You must be a player to set spawn!");

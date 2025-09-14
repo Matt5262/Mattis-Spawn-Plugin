@@ -5,5 +5,23 @@ sigma-startup-message: true
 timer: 30
 #Message to display for the timer
 timer-message: '&ePlease wait %time-remaining% seconds!'
-#Spawn settings (Don't touch if you see this message)
-spawn:
+#The message showed when you use /setspawn incorrectly
+invalid-numbers-message: '&cInvalid numbers! Use: /setspawn <x> <y> <z>'
+#The message showed when you update spawn
+spawn-updated-message: '&aSpawn updated! (%new-spawn-cords%)'
+#The message displayed when you succesfully teleported to spawn
+teleported-spawn-message: '&aTeleported to spawn!'
+#The message displayed when there is no spawn and the player can set it
+no-spawn-perm-message: '&cThere is no spawn set. Use /setspawn to set it!'
+#The message displayed when there is no spawn
+no-spawn-message: '&cThere is no spawn set.'
+#How do you want to handle players that join?
+# 1 - Teleport to spawn on first join.
+# 2 - Always teleport to spawn on join.
+# 3 - Do not teleport to spawn on join at all.
+teleport-join-method: 1
+#Respawn method?
+# 1 - Prioritize players bed.
+# 2 - Always respawn at spawn and ignore bed.
+# 3 - Do not respawn at spawn.
+respawn_method: 1

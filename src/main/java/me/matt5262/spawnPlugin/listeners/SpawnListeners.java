@@ -15,6 +15,7 @@ public class SpawnListeners implements Listener {
 
     public SpawnListeners(SpawnPlugin plugin) {
         this.plugin = plugin;
+
     }
 
 
@@ -22,9 +23,16 @@ public class SpawnListeners implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
 
-        if (!event.getPlayer().hasPlayedBefore()){
-            Location location = plugin.getConfig().getLocation("spawn");
+        int joinMethod = plugin.getConfig().getInt("teleport-join-method");
+        Location location = plugin.getConfig().getLocation("spawn");
 
+        if (joinMethod == 1){
+            if (!event.getPlayer().hasPlayedBefore()){
+                if (location != null){
+                    player.teleport(location);
+                }
+            }
+        } else if (joinMethod == 2) {
             if (location != null){
                 player.teleport(location);
             }
@@ -34,7 +42,15 @@ public class SpawnListeners implements Listener {
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event){
         Location location = plugin.getConfig().getLocation("spawn");
-        if (!event.isBedSpawn()){
+        int respawnMethod = plugin.getConfig().getInt("respawn_method");
+
+        if (respawnMethod == 1){
+            if (!event.isBedSpawn()){
+                if (location != null){
+                    event.setRespawnLocation(location);
+                }
+            }
+        } else if (respawnMethod == 2) {
             if (location != null){
                 event.setRespawnLocation(location);
             }

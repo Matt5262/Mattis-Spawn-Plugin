@@ -27,28 +27,37 @@ public class SpawnCommand implements CommandExecutor {
         if (commandSender instanceof Player){
             Player player = (Player) commandSender;
 
-            String timerMessage = plugin.getConfig().getString("timer-message");
+            String timerMsg = plugin.getConfig().getString("timer-message");
+            String teleportSpawnMsg = plugin.getConfig().getString("teleported-spawn-message");
+            String noSpawnMsgY = plugin.getConfig().getString("no-spawn-perm-message");
+            String noSpawnMsgN = plugin.getConfig().getString("no-spawn-message");
             long timer = plugin.getConfig().getLong("timer")*1000;
             Location location = plugin.getConfig().getLocation("spawn");
 
             if (!cooldown.containsKey(player.getUniqueId()) || System.currentTimeMillis() - cooldown.get(player.getUniqueId()) > timer) {
-                cooldown.put(player.getUniqueId(), System.currentTimeMillis());
                 if (location != null){
                     player.teleport(location);
-                    player.sendMessage(ChatColor.GREEN + "Teleported to spawn!");
+                    if (teleportSpawnMsg != null) {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', teleportSpawnMsg));
+                    }
+                    cooldown.put(player.getUniqueId(), System.currentTimeMillis());
                 }else{
                     if (player.hasPermission("spawnplugin.setspawn")){
-                        player.sendMessage(ChatColor.RED + "There is no spawn set. Use /setspawn to set it!");
+                        if (noSpawnMsgY != null) {
+                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', noSpawnMsgY));
+                        }
                     }else {
-                        player.sendMessage(ChatColor.RED + "There is no spawn set.");
+                        if (noSpawnMsgN != null) {
+                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', noSpawnMsgN));
+                        }
                     }
                 }
             }else{
                 long timeLeftMs = timer - (System.currentTimeMillis() - cooldown.get(player.getUniqueId()));
                 long timeLeftSeconds = timeLeftMs / 1000;
-                if (timerMessage != null) {
-                    timerMessage = timerMessage.replace("%time-remaining%", String.valueOf(timeLeftSeconds));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', timerMessage));
+                if (timerMsg != null) {
+                    timerMsg = timerMsg.replace("%time-remaining%", String.valueOf(timeLeftSeconds));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', timerMsg));
                 }
 
             }
