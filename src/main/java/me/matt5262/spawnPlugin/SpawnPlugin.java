@@ -27,7 +27,7 @@ public final class SpawnPlugin extends JavaPlugin {
         getLogger().info("SpawnPlugin by MATTI (Matt_5262) has started!");
 
         if (getConfig().getBoolean("sigma-startup-message")){
-            getLogger().info("He is very sigma btw!!");
+            getLogger().info("He is very sigma btw!!!");
         }
 
     }
