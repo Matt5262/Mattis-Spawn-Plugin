@@ -1,4 +1,9 @@
+#Config:
 #Set this to false if you do not like my wonderful startup message
 sigma-startup-message: true
-#Spawn settings
+#Use a timer? Like 10 or 30 seconds before you can run /spawn again
+timer: 30
+#Message to display for the timer
+timer-message: '&ePlease wait %time-remaining% seconds!'
+#Spawn settings (Don't touch if you see this message)
 spawn:
