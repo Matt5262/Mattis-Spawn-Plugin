@@ -12,12 +12,15 @@ Go to spawn
 Set the join method, tp at first spawn? etc
 Set the respawn method, respawn at bed? etc
 Reset spawn
+
 🤖 Commands
 setspawn (The set spawn command)
 spawn (The command to go to spawn)
 spawnplugin (To access the help and resetspawn command)
+
 🚨 Permissions
 spawnplugin.spawnplugin
 spawnplugin.setspawn
 spawnplugin.spawn
+
 
