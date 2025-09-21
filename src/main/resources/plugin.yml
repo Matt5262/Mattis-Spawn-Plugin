@@ -1,5 +1,5 @@
 name: SpawnPlugin
-version: '1.1'
+version: '2.0.0'
 main: me.matt5262.spawnPlugin.SpawnPlugin
 api-version: '1.21'
 authors: [ Matt_5262 ]
@@ -15,25 +15,20 @@ commands:
     usage: /<command>
     permission: spawnplugin.spawn
     permission-message: You do not have permission for this command!
-  repeat:
-    description: Repeat something back to you!
+  msp:
+    description: SpawnPlugin Main Commands.
     usage: /<command>
-    permission: spawnplugin.repeat
-    permission-message: You do not have permission for this command!
-  spawnplugin:
-    description: SpawnPlugin Main Commands?? IDK MAN
-    usage: /<command>
-    permission: spawnplugin.spawnplugin
+    permission: spawnplugin.msp
     permission-message: You do not have permission for this command!
 permissions:
   spawnplugin.*:
     description: gives all access to my spawn plugin
     children:
-      spawnplugin.spawnplugin: true
+      spawnplugin.msp: true
       spawnplugin.repeat: true
       spawnplugin.spawn: true
       spawnplugin.setspawn: true
-  spawnplugin.spawnplugin:
+  spawnplugin.msp:
     description: Allows the spawnplugin command for help and spawn reset!
     default: op
   spawnplugin.repeat:

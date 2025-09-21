@@ -30,7 +30,9 @@ public class SpawnPluginArgumentCommands implements CommandExecutor {
                 int zInt = (int) worldspawn.getZ();
                 player.sendMessage(ChatColor.GREEN + "Reset spawn to original world spawn! (" + xInt + " " + yInt + " " + zInt + ")");
             }else if (strings.length > 0 && strings[0].equalsIgnoreCase("help")){
-                player.sendMessage(ChatColor.YELLOW + "It really isn't that hard..\nHere are the commands, you should be able to figure out what they do:\n- /setspawn\n- /spawn\n- /spawnplugin");
+                player.sendMessage(ChatColor.YELLOW + "It really isn't that hard..\nHere are the commands, you should be able to figure out what they do:\n- /msp\n- /spawn\n- /spawnplugin");
+            }else if (strings.length > 0 && strings[0].equalsIgnoreCase("menu")) {
+                plugin.openMainMenu(player);
             }else{
                 player.sendMessage(ChatColor.RED + "Invalid use!");
             }

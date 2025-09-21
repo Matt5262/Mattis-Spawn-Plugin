@@ -15,6 +15,7 @@ public class SpawnPluginCompleter implements TabCompleter {
         if (strings.length == 1){
             suggestions.add("resetspawn");
             suggestions.add("help");
+            suggestions.add("menu");
         }
 
         return suggestions;
