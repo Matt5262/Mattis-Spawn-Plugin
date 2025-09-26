@@ -1,18 +1,19 @@
 # 📖 What is this plugin?
-This is a highly configurable spawn plugin that allowes you to set a spawn that you can tp to with the simple command: **/spawn**
+This is a highly configurable spawn plugin that allowes you to set a spawn that you can tp to with the simple command: _**/spawn**_.
 # ✅ Features
-1. Set spawn at player position
-2. Set spawn at specific cordinates
-2. Go to spawn
-3. Set the join method, tp at first spawn? etc
-4. Set the respawn method, respawn at bed? etc
-5. Reset spawn
+- Set spawn at player position with **_/setspawn_**.
+- Set spawn at specific cordinates with **_/setspawn x y z_**.
+- Go to spawn with **_/spawn_**.
+- Set the join method: tp on first join only, always tp to spawn. etc.
+- Set the respawn method: respawn at bed? Respawn at spawnpoint? etc.
+- Reset spawn with **_/msp resetspawn_**.
+- Quickly use all of the above features with the new simple menu opened with **_/msp menu_**.
 # 🤖 Commands
-- **setspawn** (The set spawn command)
-- **spawn** (The command to go to spawn)
-- **spawnplugin** (To access the help and resetspawn command)
+- **_setspawn_** (The set spawn command)
+- **_spawn_** (The command to go to spawn)
+- **_msp_** (To access commands like: **_help_**, **_menu_** and **_resetspawn_**)
 # 🚨 Permissions
-- **spawnplugin.spawnplugin**
+- **spawnplugin.msp**
 - **spawnplugin.setspawn**
 - **spawnplugin.spawn**
 # 💾 Config
@@ -46,5 +47,3 @@ teleport-join-method: 1
 # 3 - Do not respawn at spawn.
 respawn_method: 1
 ```
-https://modrinth.com/plugin/mattisspawnplugin
-## Thank you for using my plugin!
