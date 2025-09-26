@@ -11,6 +11,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
+import static me.matt5262.spawnPlugin.utils.ResetWorldUtil.resetWorldMethod;
+
 public class MainMenuListener implements Listener {
 
     private final SpawnPlugin plugin;
@@ -40,20 +42,13 @@ public class MainMenuListener implements Listener {
                 if (event.isRightClick()) return;
                 // If right click then stop script (it will run again on new click)
 
-                if (event.getClickedInventory() == null
-                        || !(event.getClickedInventory().getHolder() instanceof MainMenuHolder)) {
+                if (event.getClickedInventory() != event.getInventory()) {
                     return;
                 }
 
+
                 if (event.getCurrentItem().getType() == Material.GRASS_BLOCK) {
-                    Location worldspawn = player.getWorld().getSpawnLocation();
-                    plugin.getConfig().set("spawn", worldspawn);
-                    plugin.saveConfig();
-                    int xInt = (int) worldspawn.getX();
-                    int yInt = (int) worldspawn.getY();
-                    int zInt = (int) worldspawn.getZ();
-                    player.sendMessage(ChatColor.GREEN + "Reset spawn to original world spawn! (" + xInt + " " + yInt + " " + zInt + ")");
-                    player.closeInventory();
+                    resetWorldMethod(player, plugin);
                 }
 
             }
