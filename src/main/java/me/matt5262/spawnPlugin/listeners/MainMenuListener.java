@@ -44,7 +44,7 @@ public class MainMenuListener implements Listener {
                 }
 
 
-                if (event.getCurrentItem().getType() == Material.GRASS_BLOCK) {
+                if (event.getSlot() == 9) {
                     resetWorldMethod(player, plugin);
                     player.closeInventory();
                 }
