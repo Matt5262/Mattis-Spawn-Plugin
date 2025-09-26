@@ -1,5 +1,5 @@
 name: SpawnPlugin
-version: '2.0.1'
+version: '2.1.0'
 main: me.matt5262.spawnPlugin.SpawnPlugin
 api-version: '1.21'
 authors: [ Matt_5262 ]

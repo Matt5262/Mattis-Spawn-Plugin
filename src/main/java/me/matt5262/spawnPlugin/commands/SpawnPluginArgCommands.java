@@ -2,19 +2,18 @@ package me.matt5262.spawnPlugin.commands;
 
 import me.matt5262.spawnPlugin.SpawnPlugin;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static me.matt5262.spawnPlugin.utils.ResetWorldUtil.resetWorldMethod;
+import static me.matt5262.spawnPlugin.utils.SpawnPluginUtil.resetWorldMethod;
 
-public class SpawnPluginArgumentCommands implements CommandExecutor {
+public class SpawnPluginArgCommands implements CommandExecutor {
 
     private final SpawnPlugin plugin;
 
-    public SpawnPluginArgumentCommands(SpawnPlugin plugin) {
+    public SpawnPluginArgCommands(SpawnPlugin plugin) {
         this.plugin = plugin;
     }
 

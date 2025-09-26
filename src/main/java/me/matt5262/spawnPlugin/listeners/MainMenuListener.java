@@ -8,7 +8,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-import static me.matt5262.spawnPlugin.utils.ResetWorldUtil.resetWorldMethod;
+import static me.matt5262.spawnPlugin.utils.SpawnPluginUtil.resetWorldMethod;
+import static me.matt5262.spawnPlugin.utils.SpawnPluginUtil.setSpawnMethod;
 
 public class MainMenuListener implements Listener {
 
@@ -43,9 +44,11 @@ public class MainMenuListener implements Listener {
                     return;
                 }
 
-
                 if (event.getSlot() == 9) {
                     resetWorldMethod(player, plugin);
+                    player.closeInventory();
+                } else if (event.getSlot() == 10) {
+                    setSpawnMethod(player, plugin, new String[0]);
                     player.closeInventory();
                 }
 
