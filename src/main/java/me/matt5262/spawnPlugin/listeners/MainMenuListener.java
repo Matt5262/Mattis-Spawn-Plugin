@@ -2,14 +2,11 @@ package me.matt5262.spawnPlugin.listeners;
 
 import me.matt5262.spawnPlugin.SpawnPlugin;
 import me.matt5262.spawnPlugin.holders.MainMenuHolder;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.ItemStack;
 
 import static me.matt5262.spawnPlugin.utils.ResetWorldUtil.resetWorldMethod;
 
@@ -49,6 +46,7 @@ public class MainMenuListener implements Listener {
 
                 if (event.getCurrentItem().getType() == Material.GRASS_BLOCK) {
                     resetWorldMethod(player, plugin);
+                    player.closeInventory();
                 }
 
             }
