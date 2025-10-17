@@ -43,7 +43,7 @@ public final class SpawnPlugin extends JavaPlugin {
         ItemMeta resetSpawnItemMeta = (ItemMeta) resetSpawnItem.getItemMeta();
         if (resetSpawnItemMeta != null) {
             resetSpawnItemMeta.setDisplayName(ChatColor.RESET + "Reset spawn location");
-            resetSpawnItemMeta.setLore(List.of("Click me to reset the spawn to the original world spawn."));
+            // resetSpawnItemMeta.setLore(List.of("Click me to reset the spawn to the original world spawn."));
             resetSpawnItem.setItemMeta(resetSpawnItemMeta);
         }
 
@@ -51,7 +51,7 @@ public final class SpawnPlugin extends JavaPlugin {
         ItemMeta setSpawnItemMeta = (ItemMeta) resetSpawnItem.getItemMeta();
         if (setSpawnItemMeta != null) {
             setSpawnItemMeta.setDisplayName(ChatColor.RESET + "Set spawn here");
-            setSpawnItemMeta.setLore(List.of("Click me to set spawn to your location."));
+            // setSpawnItemMeta.setLore(List.of("Click me to set spawn to your location."));
             setSpawnItem.setItemMeta(setSpawnItemMeta);
         }
 
