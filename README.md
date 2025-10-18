@@ -1,3 +1,5 @@
+# 📩 Downloads
+[Download here](https://modrinth.com/plugin/mattisspawnplugin)
 # 📖 What is this plugin?
 This is a highly configurable spawn plugin that allowes you to set a spawn that you can tp to with the simple command: _**/spawn**_.
 # ✅ Features
@@ -47,3 +49,4 @@ teleport-join-method: 1
 # 3 - Do not respawn at spawn.
 respawn_method: 1
 ```
+
